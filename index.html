@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>魅影直播-让每一次相遇都有值得停留的精彩</title>
+<meta name="description" content="魅影直播汇聚音乐现场、舞蹈才艺、游戏交流与生活分享，以清晰的频道分类、便捷的视频播放和贴心的观看工具，帮助你发现感兴趣的内容。浏览主题精选、收藏喜爱频道、记录观看灵感，了解直播观看与互动技巧；支持手机、平板及电脑访问，搭配日夜主题切换，让每一段闲暇时光更有趣。">
+<meta name="keywords" content="魅影直播">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://example.com/">
+<meta property="og:title" content="魅影直播-让每一次相遇都有值得停留的精彩">
+<meta property="og:description" content="魅影直播汇聚音乐现场、舞蹈才艺、游戏交流与生活分享，以清晰的频道分类、便捷的视频播放和贴心的观看工具，帮助你发现感兴趣的内容。浏览主题精选、收藏喜爱频道、记录观看灵感，了解直播观看与互动技巧；支持手机、平板及电脑访问，搭配日夜主题切换，让每一段闲暇时光更有趣。">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_CN">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "魅影直播",
+  "alternateName": "魅影直播平台",
+  "url": "https://example.com/",
+  "description": "魅影直播汇聚音乐现场、舞蹈才艺、游戏交流与生活分享，以清晰的频道分类、便捷的视频播放和贴心的观看工具，帮助你发现感兴趣的内容。",
+  "inLanguage": "zh-CN",
+  "publisher": {
+    "@type": "Organization",
+    "name": "魅影直播"
+  },
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://example.com/search?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<style>
+:root {
+  --bg: #f7f8fa;
+  --bg-soft: #ffffff;
+  --bg-elev: #ffffff;
+  --text: #1c2026;
+  --text-soft: #5a6270;
+  --line: #e4e7ec;
+  --brand: #e0405a;
+  --brand-soft: rgba(224, 64, 90, 0.09);
+  --shadow: 0 8px 24px rgba(24, 30, 42, 0.07);
+  --radius: 14px;
+  --maxw: 1120px;
+}
+html[data-theme="dark"] {
+  --bg: #14161b;
+  --bg-soft: #1a1d23;
+  --bg-elev: #20242b;
+  --text: #eef1f5;
+  --text-soft: #a3abb8;
+  --line: #2c323b;
+  --brand: #ff6b81;
+  --brand-soft: rgba(255, 107, 129, 0.14);
+  --shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "PingFang SC", "Microsoft YaHei", "Hiragino Sans GB", "Source Han Sans SC", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  transition: background 0.28s ease, color 0.28s ease;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--brand); text-decoration: none; }
+a:hover { text-decoration: underline; }
+.wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 20px; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: color-mix(in srgb, var(--bg-soft) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  min-height: 64px;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: 0.5px;
+}
+.logo:hover { text-decoration: none; }
+.logo-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 9px;
+  background: linear-gradient(135deg, var(--brand), #ff9a6c);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+}
+.nav {
+  display: flex;
+  gap: 4px;
+  flex: 1;
+  flex-wrap: wrap;
+}
+.nav a {
+  color: var(--text-soft);
+  font-size: 15px;
+  padding: 6px 11px;
+  border-radius: 9px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav a:hover { color: var(--text); background: var(--brand-soft); text-decoration: none; }
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, transform 0.15s ease;
+}
+.theme-btn:hover { border-color: var(--brand); }
+.theme-btn:active { transform: scale(0.97); }
+
+.hero {
+  padding: 62px 0 48px;
+  background:
+    radial-gradient(1000px 340px at 15% -10%, var(--brand-soft), transparent 70%),
+    linear-gradient(180deg, var(--bg-soft), var(--bg));
+  border-bottom: 1px solid var(--line);
+}
+.hero-tag {
+  display: inline-block;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--brand);
+  background: var(--brand-soft);
+  border-radius: 999px;
+  padding: 4px 13px;
+  margin-bottom: 18px;
+}
+.hero h1 {
+  font-size: clamp(27px, 4.4vw, 42px);
+  line-height: 1.32;
+  margin: 0 0 18px;
+  font-weight: 800;
+  letter-spacing: -0.4px;
+}
+.hero p {
+  max-width: 760px;
+  margin: 0 0 12px;
+  color: var(--text-soft);
+  font-size: 16.5px;
+}
+.hero-actions { margin-top: 26px; display: flex; gap: 12px; flex-wrap: wrap; }
+.btn {
+  display: inline-block;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn:hover { text-decoration: none; transform: translateY(-1px); }
+.btn-primary { background: var(--brand); color: #fff; box-shadow: 0 6px 18px rgba(224, 64, 90, 0.28); }
+.btn-ghost { background: var(--bg-elev); color: var(--text); border: 1px solid var(--line); }
+
+section.block { padding: 56px 0; }
+section.block + section.block { border-top: 1px solid var(--line); }
+.section-head { margin-bottom: 30px; max-width: 760px; }
+.section-head h2 {
+  font-size: clamp(21px, 2.7vw, 27px);
+  margin: 0 0 10px;
+  font-weight: 750;
+  letter-spacing: -0.2px;
+}
+.section-head p { margin: 0; color: var(--text-soft); font-size: 15.5px; }
+
+.grid { display: grid; gap: 18px; }
+.grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.card {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 22px 20px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+.card:hover { transform: translateY(-3px); border-color: var(--brand); }
+.card h3 { font-size: 17px; margin: 0 0 8px; font-weight: 700; }
+.card p { margin: 0; color: var(--text-soft); font-size: 14.6px; line-height: 1.75; }
+.card-ico {
+  width: 38px; height: 38px;
+  border-radius: 11px;
+  background: var(--brand-soft);
+  color: var(--brand);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 14px;
+  font-weight: 700;
+}
+
+.feature-list { list-style: none; margin: 0; padding: 0; }
+.feature-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 13px;
+  color: var(--text-soft);
+  font-size: 15.3px;
+}
+.feature-list li:last-child { margin-bottom: 0; }
+.feature-list li::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 11px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--brand);
+}
+
+.split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 34px;
+  align-items: start;
+}
+.panel {
+  background: var(--bg-elev);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 26px 24px;
+  box-shadow: var(--shadow);
+}
+.panel h3 { margin: 0 0 14px; font-size: 17.5px; font-weight: 700; }
+
+.steps { counter-reset: step; list-style: none; margin: 0; padding: 0; }
+.steps li {
+  counter-increment: step;
+  position: relative;
+  padding: 0 0 20px 46px;
+  color: var(--text-soft);
+  font-size: 15.3px;
+}
+.steps li:last-child { padding-bottom: 0; }
+.steps li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0; top: 1px;
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--brand-soft);
+  color: var(--brand);
+  font-weight: 700;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.steps strong { color: var(--text); display: block; margin-bottom: 2px; }
+
+.prose p { margin: 0 0 16px; color: var(--text-soft); font-size: 15.6px; }
+.prose p:last-child { margin-bottom: 0; }
+.prose h3 { font-size: 18px; margin: 26px 0 10px; font-weight: 700; color: var(--text); }
+.prose h3:first-child { margin-top: 0; }
+.prose strong { color: var(--text); }
+
+.tag-row { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 18px; }
+.tag {
+  font-size: 13.5px;
+  color: var(--text-soft);
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 5px 13px;
+}
+
+.site-footer {
+  background: var(--bg-soft);
+  border-top: 1px solid var(--line);
+  padding: 40px 0 30px;
+  margin-top: 0;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 26px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.footer-brand { max-width: 420px; }
+.footer-brand .logo { margin-bottom: 10px; }
+.footer-brand p { margin: 0; color: var(--text-soft); font-size: 14.4px; line-height: 1.75; }
+.footer-links { display: flex; gap: 40px; flex-wrap: wrap; }
+.footer-col h4 { font-size: 14px; margin: 0 0 10px; color: var(--text); font-weight: 700; }
+.footer-col a {
+  display: block;
+  color: var(--text-soft);
+  font-size: 14px;
+  padding: 3px 0;
+}
+.copyright {
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--text-soft);
+  font-size: 13.4px;
+  text-align: center;
+}
+
+@media (max-width: 960px) {
+  .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .split { grid-template-columns: 1fr; gap: 22px; }
+}
+@media (max-width: 640px) {
+  body { font-size: 15.5px; }
+  .wrap { padding: 0 16px; }
+  .header-inner { min-height: 58px; gap: 10px; }
+  .nav { order: 3; width: 100%; padding-bottom: 10px; }
+  .nav a { font-size: 14px; padding: 5px 9px; }
+  .hero { padding: 40px 0 34px; }
+  section.block { padding: 38px 0; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+  .card { padding: 19px 17px; }
+  .panel { padding: 20px 17px; }
+  .footer-links { gap: 30px; }
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="logo" href="#top"><span class="logo-mark">魅</span>魅影直播</a>
+    <nav class="nav">
+      <a href="#topics">主题精选</a>
+      <a href="#channels">频道分类</a>
+      <a href="#player">播放体验</a>
+      <a href="#tools">观看工具</a>
+      <a href="#tips">观看技巧</a>
+      <a href="#faq">常见问题</a>
+    </nav>
+    <button class="theme-btn" id="themeToggle" type="button" aria-label="切换日夜主题">
+      <span id="themeIcon">◐</span><span id="themeLabel">夜间模式</span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <span class="hero-tag">发现 · 停留 · 共鸣</span>
+      <h1>魅影直播：让每一次相遇都有值得停留的精彩</h1>
+      <p>打开魅影直播，你面对的不是一片杂乱堆叠的画面，而是一整套被认真梳理过的内容结构。音乐现场的即兴演奏、舞蹈才艺的反复打磨、游戏交流里的并肩作战、生活分享中的烟火日常，都被归入清晰的频道分类之中，让你在最短的时间里找到真正想看的那一场。</p>
+      <p>我们相信，好的观看体验来自细节：稳定的视频播放、顺手的观看工具、能随手收藏的喜爱频道，以及随时可以切换的日夜主题。无论你手边是手机、平板还是电脑，都能接着上一段未尽兴的时光继续看下去。</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="#channels">浏览频道分类</a>
+        <a class="btn btn-ghost" href="#tips">了解观看技巧</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="topics">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>主题精选：把值得一看的内容提前挑好</h2>
+        <p>魅影直播的主题精选，是按观看场景与情绪节奏整理的推荐集合。它不追求堆满屏幕的热闹，而是希望你在打开页面的十几秒内，就能遇到一个"今天正想看看这个"的入口。</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="card-ico">♪</span>
+          <h3>深夜音乐专场</h3>
+          <p>把民谣、爵士与轻电子放在同一份歌单式的清单里，适合结束一天之后安静地听着。标注重播与连贯播放的频道，适合边做家务边听。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">◆</span>
+          <h3>舞台完整版</h3>
+          <p>把舞蹈才艺中完整度高的节目单独收拢，从编舞到走位一气呵成，方便你重复观看某个转身或某个停顿的细节。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">↗</span>
+          <h3>技术与进阶</h3>
+          <p>游戏交流之外的另一种看点：设备调校、动作拆解、思路复盘。适合想从"看热闹"过渡到"看得懂"的观众。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">☀</span>
+          <h3>清晨生活流</h3>
+          <p>早餐、通勤、整理房间这类低刺激的内容被集中在一起，声音温和、节奏平缓，用来打开一天的注意力刚好。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">＃</span>
+          <h3>本周话题</h3>
+          <p>每周围绕一个具体话题汇集不同频道的内容，从多个角度看到同一件事，比单一视角更有意思。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">☆</span>
+          <h3>新面孔推荐</h3>
+          <p>给刚出现的频道一个被看见的机会。这里的推荐更看内容本身的完成度，而不是既有的热度。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="channels">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>频道分类：四条主线，各有各的节奏</h2>
+        <p>魅影直播把主要内容归入四条主线。分类的意义不只是"分门别类"，更是让你能按自己的心境选择——想被带动、想被逗乐、想跟着学，还是只想有人在旁边说话。</p>
+      </div>
+      <div class="grid grid-4">
+        <article class="card">
+          <span class="card-ico">♫</span>
+          <h3>音乐现场</h3>
+          <p>从自弹自唱到小型合奏，从翻唱到原创。现场感来自不可复制的细节：换气、走音、临时改的结尾。听现场的人，往往是在听那一刻的真实。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">✧</span>
+          <h3>舞蹈才艺</h3>
+          <p>街舞、民族舞、流行编舞以及各类技能展示。适合反复观看的片段通常有清晰的节拍点，配合倍速与逐段回看，能看清动作的衔接。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">◈</span>
+          <h3>游戏交流</h3>
+          <p>不只比分，还有判断与沟通。看一位玩家如何在信息不足时做决定，比看结果更有参考价值；评论区的讨论也常能补上自己忽略的角度。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">❖</span>
+          <h3>生活分享</h3>
+          <p>做饭、养花、修东西、出差路上的一杯咖啡。看起来平常，却最容易让人放松，也最容易在评论区遇到同好。</p>
+        </article>
+      </div>
+      <div class="tag-row">
+        <span class="tag">按内容类型筛选</span>
+        <span class="tag">按开播时段筛选</span>
+        <span class="tag">按是否可回看筛选</span>
+        <span class="tag">按语言与地区筛选</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="player">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>视频播放体验：把"等"和"卡"降到最低</h2>
+        <p>观看直播时，最影响心情的往往不是内容本身，而是加载、跳帧和被迫重新开始。魅影直播在播放这一层做了不少收敛，让操作尽量不打断你正在看的东西。</p>
+      </div>
+      <div class="split">
+        <div class="panel prose">
+          <h3>自适应清晰度与网络感知</h3>
+          <p>播放器会根据当前网络状况自动调整清晰度，网络波动时优先保证画面连续，而不是一味追求高码率。你也可以手动锁定清晰度：在固定宽带下锁定高画质，在移动网络下锁定更省流量的档位。</p>
+          <h3>进度与回看的衔接</h3>
+          <p>对于支持回看的频道，拖动进度条会先加载目标位置附近的片段，避免"拖一下就转圈很久"。离开页面再回来时，播放位置会尽量保留，让你从刚才停下的地方继续。</p>
+          <h3>画面与声音的独立控制</h3>
+          <p>音量、倍速、画面比例彼此独立。想边做事边听，可以把画面缩小、只留声音；想看清动作细节，可以放慢倍速逐段回看；遇到画面比例不合适的画面，也能一键切换填充与完整显示。</p>
+        </div>
+        <div class="panel">
+          <h3>播放时常用的几个动作</h3>
+          <ul class="feature-list">
+            <li><strong>单击暂停、双击全屏</strong>，减少在菜单里找按钮的次数，注意力留在内容上。</li>
+            <li><strong>静音自动播放</strong>：进入频道先静音播放画面，确认想看之后再打开声音，避免突然的声音打断周围的人。</li>
+            <li><strong>低延迟优先</strong>：互动型内容可开启低延迟模式，牺牲少量缓冲余量换取更贴近实时的反馈。</li>
+            <li><strong>后台不中断</strong>：切换到其他标签页时，声音可以继续播放，方便一边听一边查资料。</li>
+            <li><strong>快速切换频道</strong>：在同一个分类内左右切换，不用退回列表重新找，保持连贯的浏览节奏。</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tools">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>观看工具：让"看"这件事更顺手</h2>
+        <p>工具的价值在于被忘记。真正顺手的观看工具不会反复提醒你它的存在，只在你需要的时候正好在。</p>
+      </div>
+      <div class="grid grid-3">
+        <article class="card">
+          <span class="card-ico">⌕</span>
+          <h3>搜索与筛选</h3>
+          <p>支持按频道名称、内容类型、开播状态组合筛选。搜索框会保留最近的查询记录，省去重复输入。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">★</span>
+          <h3>收藏喜爱频道</h3>
+          <p>把常看的频道加入收藏后，会集中出现在"我的收藏"里，并按最近开播时间排序，一打开就能看到谁在播。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">✎</span>
+          <h3>观看灵感记录</h3>
+          <p>看到一句有意思的话、一个想试的做法，可以随手记一条短笔记并关联到当前频道，之后按时间回看这些零散的念头。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">◐</span>
+          <h3>日夜主题切换</h3>
+          <p>白天用浅色主题，文字对比清楚、阅读轻松；夜里切到深色主题，降低屏幕整体亮度，长时间观看更舒适。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">▤</span>
+          <h3>多端访问</h3>
+          <p>手机、平板、电脑共用一套收藏与记录。在通勤路上收藏的频道，回家打开电脑仍然在原地等你。</p>
+        </article>
+        <article class="card">
+          <span class="card-ico">≡</span>
+          <h3>播放历史</h3>
+          <p>按时间倒序排列的观看记录，帮助你想不起名字时重新找回那一场，也可以选择清空某一段历史。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="tips">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>直播观看与互动技巧：从"看着"到"参与"</h2>
+        <p>直播与点播最大的差别，在于它是正在发生的。掌握几个不费力的小方法，能让观看体验顺畅很多，也能让互动更有分寸。</p>
+      </div>
+      <div class="split">
+        <div class="panel">
+          <h3>观看前</h3>
+          <ol class="steps">
+            <li><strong>先看分类再看推荐</strong>如果你心里已经有想看的类型，直接从频道分类进入，比在推荐流里翻找更快。</li>
+            <li><strong>留意开播时段</strong>常看的频道多在固定时段开播，把它加入收藏后按最近开播排序，就不必反复刷新。</li>
+            <li><strong>确认网络与电量</strong>长时间观看建议接入稳定网络，移动端留意电量与发热，必要时降低清晰度以减少耗电。</li>
+          </ol>
+        </div>
+        <div class="panel">
+          <h3>观看中</h3>
+          <ol class="steps">
+            <li><strong>用低延迟模式跟进互动</strong>参与话题讨论时，低延迟能让你的回应更贴近当前进度，不至于"答非所问"。</li>
+            <li><strong>回看时用倍速与暂停</strong>遇到值得细看的片段，放慢倍速并暂停在关键帧，比反复拖动更省时间。</li>
+            <li><strong>互动保持简洁友善</strong>发言聚焦内容本身，避免刷屏与他人信息；遇到不合适的内容，使用举报与屏蔽而不是争论。</li>
+          </ol>
+        </div>
+      </div>
+      <div class="panel" style="margin-top:22px;">
+        <h3>观看后：把零散的感受留下来</h3>
+        <div class="prose">
+          <p>一场直播结束后，真正留下印象的往往只有一两个瞬间。趁热写下一句简短记录——一句旋律、一个动作、一个想法——比事后再回想更可靠。这些记录积累到十几条之后，会自然连成一条属于你自己的兴趣线索：你更容易被哪种节奏吸引，在哪个时段看得最投入，哪些频道反复出现在你的列表里。</p>
+          <p>魅影直播的观看灵感记录正是为此设计的：它不追求写成长篇笔记，而是把随手的一句话存下来，并与当时的频道关联。之后你可以按时间翻回去，也可以从某个常看的频道反向查看相关的记录，慢慢看清自己的偏好。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>常见问题与使用建议</h2>
+        <p>把最常被问到的几件事集中在这里，省去你在页面里来回寻找。</p>
+      </div>
+      <div class="grid grid-2">
+        <div class="panel prose">
+          <h3>日夜主题会跟随系统吗</h3>
+          <p>默认按你的手动选择显示，切换后会记住偏好，下次打开仍是你上次选的主题。不喜欢强对比的话，深色主题下的文字亮度也被刻意压低了一些。</p>
+        </div>
+        <div class="panel prose">
+          <h3>在哪些设备上可以访问</h3>
+          <p>手机、平板与电脑都能打开，页面会按屏幕宽度自动调整布局。同一账号下的收藏与观看记录在各端之间保持一致。</p>
+        </div>
+        <div class="panel prose">
+          <h3>收藏和记录会丢吗</h3>
+          <p>收藏与灵感记录保存在账号之下，正常使用不会因为更换设备而消失。若长期未使用，建议先确认账号状态再整理历史记录。</p>
+        </div>
+        <div class="panel prose">
+          <h3>看直播时画面卡顿怎么办</h3>
+          <p>先尝试手动下调清晰度，再检查是否为网络波动。如果只是偶尔跳帧，多半是自适应切换造成的短暂缓冲，稍等即可恢复。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <a class="logo" href="#top"><span class="logo-mark">魅</span>魅影直播</a>
+        <p>以清晰的频道分类、稳定的播放体验与顺手的观看工具，把音乐现场、舞蹈才艺、游戏交流与生活分享整理成一段段值得停留的时光。</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h4>内容频道</h4>
+          <a href="#channels">音乐现场</a>
+          <a href="#channels">舞蹈才艺</a>
+          <a href="#channels">游戏交流</a>
+          <a href="#channels">生活分享</a>
+        </div>
+        <div class="footer-col">
+          <h4>使用指南</h4>
+          <a href="#player">播放体验</a>
+          <a href="#tools">观看工具</a>
+          <a href="#tips">观看技巧</a>
+          <a href="#faq">常见问题</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">魅影直播 · 让每一次相遇都有值得停留的精彩</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var btn = document.getElementById('themeToggle');
+  var label = document.getElementById('themeLabel');
+  var icon = document.getElementById('themeIcon');
+  var KEY = 'meiying-theme';
+
+  function apply(mode) {
+    root.setAttribute('data-theme', mode);
+    var dark = mode === 'dark';
+    if (label) { label.textContent = dark ? '日间模式' : '夜间模式'; }
+    if (icon) { icon.textContent = dark ? '☀' : '◐'; }
+    if (btn) { btn.setAttribute('aria-pressed', dark ? 'true' : 'false'); }
+  }
+
+  var saved = null;
+  try { saved = window.localStorage.getItem(KEY); } catch (e) { saved = null; }
+  if (!saved) {
+    saved = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  apply(saved);
+
+  if (btn) {
+    btn.addEventListener('click', function () {
+      var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      apply(next);
+      try { window.localStorage.setItem(KEY, next); } catch (e) {}
+    });
+  }
+})();
+</script>
+
+</body>
+</html>
